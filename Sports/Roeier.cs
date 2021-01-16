@@ -23,10 +23,15 @@ namespace Sports
             get { return locatie; }
             set { locatie = value; }
         }
-
         private bool isStuurman;
-        private int aantalRoeiersInBoot;
-        private TypeBoot typeBoot;
+
+        public bool IsStuurman
+        {
+            get { return isStuurman; }
+            set { isStuurman = value; }
+        }
+
+        public TypeBoot TypeBoot { get; private set; }
 
         public void HardSlagen(int aantalHardeSlagen)
         {
@@ -36,8 +41,12 @@ namespace Sports
         {
             Console.WriteLine($"{naam}, begin (terug) met gewoon roeien.");
         }
-        public bool StelIn(string Naam,int locatie,bool isStuurman, TypeBoot typeBoot)
+        public bool StelIn(string naam,int locatie,bool isStuurman, TypeBoot typeBoot)
         {
+            Naam = naam;
+            Locatie = locatie;
+            IsStuurman = isStuurman;
+            TypeBoot = typeBoot;
             return true;
         }
     }
